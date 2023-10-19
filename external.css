@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
+
+ .leftBox {
+    background-position: right;
+    /* Don't understand why my background position isn't being applied */
+
+    background-color: red;
+    height: 100px;
+    width: 100px;
+ }
+ 
+ .midBox {
+    background:green;
+    height: 300px;
+    width: 200px;
+ }
+
+ .rightBox {
+    background: blue;
+    height: 400px;
+    width: 400px;
+ }
+
+ .zIndexPractice {
+    position: center;
+}
+
+.purpleBox {
+    text-align: right;
+    position: absolute;
+    background: purple;
+    margin-top: 13%;
+    margin-left: 15%;
+    height: 600px;
+    width: 600px;
+    z-index:2
+}
+
+.yellowBox {
+    text-align: center;
+    position: absolute;
+    background: yellow;
+    margin-top: 8%;
+    height: 700px;
+    width: 700px;
+    z-index: 3;
+}
+
+.pinkBox {
+    text-align: left;
+    position: absolute;
+    background: pink;
+    margin-left: 26%;
+    height: 500px;
+    width: 500px;
+    z-index: 1;
+}
+
+@media all and (min-width:1050px) {
+    .purpleBox {z-index: 2}
+    .yellowBox {z-index: 3}
+    .pinkBox {z-index: 1}
+}
+
+@media all and (min-width:1050px) {
+    .purpleBox {z-index: 3}
+    .yellowBox {z-index: 1}
+    .pinkBox {z-index: 2}
+}
+
+@media all and (min-width:1050px) {
+    .purpleBox {z-index: 1}
+    .yellowBox {z-index: 2}
+    .pinkBox {z-index: 3}
+}
+
+/* My goal was for the z-index of each box to be different when changing from one device to another. 
+When testing this via the inspect tool on my browser, nothing changed as I switched between different screen sizes.
+The @media tab still needs work. */
+
+/* When replacing min-width with max-width, it brought the pink box in front and sent the yellow box to the back. 
+When switching between different screen sizes though, it continued to never switched the order in which the colored boxes are layered */
